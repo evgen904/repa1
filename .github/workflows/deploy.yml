@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DEPLOY_PATH: /home/boss/webapps/repa1
+  DEPLOY_PATH: /home/boss/webapps/static/repa1
   # В теории можно собрать не только Vue-приложение, так как принцип сборки мало где отличается
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: dist
