@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
-const basePath = process.env.VUE_APP_BASEPATH;
+const basePath = "repa1";
 
 const routes = [
   {
