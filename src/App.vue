@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/repa1/">Home</router-link> |
     <router-link to="/repa1/about">About</router-link> |
     <router-link to="/repa1/calendar">Calendar</router-link>
   </nav>
