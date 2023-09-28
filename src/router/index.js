@@ -2,7 +2,7 @@ import { createRouter, createMemoryHistory, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue";
 
 const isServer = typeof window === "undefined";
-const basePath = process.env.VUE_APP_BASEPATH;
+const basePath = "";
 let history = isServer ? createMemoryHistory() : createWebHistory();
 
 const routes = [
