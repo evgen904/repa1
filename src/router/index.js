@@ -7,7 +7,7 @@ let history = isServer ? createMemoryHistory() : createWebHistory();
 
 const routes = [
   {
-    path: "/",
+    path: `${basePath}/`,
     name: "home",
     component: HomeView,
   },
