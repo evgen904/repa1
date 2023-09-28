@@ -2,7 +2,7 @@ import { createRouter, createMemoryHistory, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue";
 
 const isServer = typeof window === "undefined";
-const basePath = "";
+const basePath = process.env.VUE_APP_BASEPATH;
 let history = isServer ? createMemoryHistory() : createWebHistory();
 
 const routes = [
@@ -12,7 +12,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: `/repa1/about`,
+    path: `${basePath}/about`,
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -21,7 +21,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: `/repa1/calendar`,
+    path: `${basePath}/calendar`,
     name: "calendar",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
