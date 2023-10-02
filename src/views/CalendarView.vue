@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .calendar {
     max-width: 800px;
     background: #f0f0f0;
