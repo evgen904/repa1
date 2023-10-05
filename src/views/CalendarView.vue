@@ -19,17 +19,24 @@
       <span>{{ counter }}</span>
       <button @click="counter++">+</button>
     </div>
+    <br>
+    <Test />
   </div>
 </template>
 
 <script>
+import Test from "@/components/Test.vue";
+
 export default {
   name: "CalendarView",
   data() {
     return {
       counter: 1,
     }
-  }
+  },
+  components: {
+    Test,
+  },
 };
 </script>
 
