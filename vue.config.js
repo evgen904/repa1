@@ -37,7 +37,7 @@ module.exports = defineConfig({
     plugins: [
       new webpack.container.ModuleFederationPlugin({
         name: "calendar",
-        filename: "js/remoteEntry.js",
+        filename: "assets/js/remoteEntry.js",
         exposes: {
           "./Calendar": "./src/views/CalendarView",
         },
