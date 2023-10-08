@@ -1,6 +1,7 @@
 <template>
   <div>
-    test test test
+    test test test <br>
+    inner component
   </div>
 </template>
 

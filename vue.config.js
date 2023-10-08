@@ -1,31 +1,18 @@
 const { defineConfig } = require("@vue/cli-service");
+const webpack = require("webpack");
 
 module.exports = defineConfig({
+  pages: {
+    index: {
+      entry: "./src/index.js",
+    },
+  },
   transpileDependencies: true,
   lintOnSave: false,
   publicPath:
     process.env.NODE_ENV === "production"
       ? process.env.VUE_APP_BASEPATH
       : "auto",
-  chainWebpack: (config) => {
-    config
-      .plugin("module-federation-plugin")
-      .use(require("webpack").container.ModuleFederationPlugin, [
-        {
-          name: "calendar",
-          exposes: {
-            "./Calendar": "./src/views/CalendarView",
-          },
-          shared: {
-            vue: {
-              eager: true,
-              singleton: false,
-            },
-          },
-          filename: "remoteEntry.js",
-        },
-      ]);
-  },
   configureWebpack: {
     optimization: {
       splitChunks: {
@@ -47,5 +34,19 @@ module.exports = defineConfig({
         },
       },
     },
+    plugins: [
+      new webpack.container.ModuleFederationPlugin({
+        name: "calendar",
+        filename: "remoteEntry.js",
+        exposes: {
+          "./Calendar": "./src/views/CalendarView",
+        },
+        shared: {
+          vue: {
+            singleton: true,
+          },
+        },
+      }),
+    ],
   },
 });
