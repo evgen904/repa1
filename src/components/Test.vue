@@ -1,7 +1,8 @@
 <template>
   <div>
     test test test <br>
-    inner component
+    inner component <br>
+    added new text
   </div>
 </template>
 
